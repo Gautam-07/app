@@ -1,0 +1,94 @@
+.myorders-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.myorders-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.myorders-loading,
+.myorders-error,
+.myorders-empty {
+  text-align: center;
+  color: #888;
+  margin: 2rem 0;
+  font-size: 1.1rem;
+}
+
+.myorders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.myorders-order {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  background: #fafbfc;
+  transition: box-shadow 0.2s;
+}
+.myorders-order:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.myorders-order-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.98rem;
+  margin-bottom: 0.7rem;
+  color: #444;
+}
+
+.myorders-order-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.myorders-order-items ul,
+.myorders-order-info ul {
+  margin: 0.3rem 0 0 1.2rem;
+  padding: 0;
+  list-style: disc;
+  color: #222;
+  font-size: 0.97rem;
+}
+
+.myorders-order-info {
+  font-size: 0.97rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.myorders-order-info ul {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.myorders-order-info li {
+  margin-bottom: 0.1rem;
+}
+
+@media (max-width: 600px) {
+  .myorders-container {
+    padding: 0.5rem;
+  }
+  .myorders-order-body {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .myorders-order-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

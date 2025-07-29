@@ -1,0 +1,251 @@
+.list_meal_plans {
+    width: 100%;
+    padding: 0;
+}
+
+.list_meal_plans_header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.list_meal_plans_header h2 {
+    color: #ff8a00;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.list_meal_plans_header p {
+    color: #666;
+    font-size: 16px;
+}
+
+.list_meal_plans_loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #666;
+}
+
+.loading_spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ff8a00;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.no_meal_plans {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    font-size: 18px;
+}
+
+.list_meal_plans_table {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.list_meal_plans_table_format {
+    display: grid;
+    grid-template-columns: 80px 2fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.list_meal_plans_table_format:first-child {
+    background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+    color: white;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+.list_meal_plans_table_format:not(:first-child):hover {
+    background-color: #f8f9fa;
+}
+
+.list_meal_plans_table_format img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #eee;
+}
+
+.meal_plan_info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.meal_plan_name {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+}
+
+.meal_plan_description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.meal_plan_duration,
+.meal_plan_meals,
+.meal_plan_price {
+    font-weight: 500;
+    color: #333;
+}
+
+.meal_plan_price {
+    color: #ff8a00;
+    font-weight: 600;
+}
+
+.meal_plan_status {
+    display: flex;
+    justify-content: center;
+}
+
+.status_badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status_badge.active {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status_badge.inactive {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.meal_plan_actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.toggle_btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle_btn.activate {
+    background: #28a745;
+    color: white;
+}
+
+.toggle_btn.activate:hover {
+    background: #218838;
+}
+
+.toggle_btn.deactivate {
+    background: #ffc107;
+    color: #212529;
+}
+
+.toggle_btn.deactivate:hover {
+    background: #e0a800;
+}
+
+.remove_meal_plan_btn {
+    width: 30px;
+    height: 30px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.remove_meal_plan_btn:hover {
+    background: #c82333;
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    .list_meal_plans_table_format {
+        grid-template-columns: 60px 2fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .meal_plan_actions {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .toggle_btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    .remove_meal_plan_btn {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .list_meal_plans_table_format {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .list_meal_plans_table_format:first-child {
+        display: none;
+    }
+    
+    .list_meal_plans_table_format {
+        border: 1px solid #eee;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        padding: 15px;
+    }
+    
+    .meal_plan_info {
+        text-align: center;
+    }
+    
+    .meal_plan_actions {
+        flex-direction: row;
+        justify-content: center;
+    }
+} 

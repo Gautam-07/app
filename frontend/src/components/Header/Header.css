@@ -1,0 +1,384 @@
+.header {
+  background: linear-gradient(135deg, #f15a24 0%, #f6391c 100%);
+  height: 85vh;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(241, 90, 36, 0.3);
+  margin: 2rem;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.header_image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f15a24 0%, #f6391c 100%);
+  z-index: 2;
+}
+
+.header_image > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  z-index: 3;
+  transition: transform 0.3s ease;
+}
+
+.header_image > img:hover {
+  transform: scale(1.02);
+}
+
+.header_text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInCenter 1s ease-out;
+}
+
+@keyframes fadeInCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.header_text > h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header_text > p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+/* Modern Search Section */
+.header_search_button {
+  position: absolute;
+  top: 65%;
+  z-index: 4;
+  left: 50%;
+  height: 70px;
+  width: 60%;
+  max-width: 600px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  animation: slideInUp 1s ease-out 0.3s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.header_search_button > .header_search {
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(25px);
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.header_search_button > .header_search::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(241, 90, 36, 0.08), transparent);
+  transition: left 0.6s ease;
+}
+
+.header_search_button > .header_search:hover::before {
+  left: 100%;
+}
+
+.header_search_button > .header_search:hover {
+  border-color: rgba(241, 90, 36, 0.5);
+  box-shadow: 0 16px 50px rgba(241, 90, 36, 0.25);
+  transform: translateY(-3px);
+}
+
+.header_search_button > .header_search:focus-within {
+  border-color: #f15a24;
+  box-shadow: 0 16px 50px rgba(241, 90, 36, 0.3);
+  transform: translateY(-3px);
+}
+
+.header_search_button > .header_search > input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  padding: 0 1.5rem;
+  font-size: 1.2rem;
+  background: transparent;
+  outline: none;
+  color: #2d3748;
+  font-weight: 500;
+  min-width: 0;
+  letter-spacing: 0.3px;
+}
+
+.header_search_button > .header_search > input::placeholder {
+  color: #a0aec0;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.header_search_button > .header_search > input:focus::placeholder {
+  opacity: 0.5;
+}
+
+.header_search_button > .header_search > button {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #f15a24 0%, #f6391c 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(241, 90, 36, 0.4);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header_search_button > .header_search > button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.header_search_button > .header_search > button:hover::before {
+  left: 100%;
+}
+
+.header_search_button > .header_search > button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(241, 90, 36, 0.6);
+}
+
+.header_search_button > .header_search > button:active {
+  transform: scale(0.95);
+}
+
+.header_search_button > .header_search > button > img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.header_search_button > .header_search > button:hover > img {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header {
+    margin: 1rem;
+    height: 70vh;
+  }
+  
+  .header_text > h2 {
+    font-size: 2.5rem;
+  }
+  
+  .header_text > p {
+    font-size: 1.1rem;
+  }
+  
+  .header_search_button {
+    width: 70%;
+    height: 65px;
+  }
+  
+  .header_search_button > .header_search {
+    font-size: 1.1rem;
+    padding: 0 1.75rem;
+  }
+  
+  .header_search_button > .header_search > input {
+    font-size: 1.1rem;
+    padding: 0 1.25rem;
+  }
+  
+  .header_search_button > .header_search > button {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .header_search_button > .header_search > button > img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin: 0.75rem;
+    height: 60vh;
+  }
+  
+  .header_text {
+    padding: 1.5rem 2rem;
+    top: 25%;
+  }
+  
+  .header_text > h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .header_text > p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .header_search_button {
+    width: 85%;
+    height: 60px;
+    top: 70%;
+  }
+  
+  .header_search_button > .header_search {
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    border-radius: 30px;
+  }
+  
+  .header_search_button > .header_search > input {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .header_search_button > .header_search > button {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .header_search_button > .header_search > button > img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin: 0.5rem;
+    height: 50vh;
+  }
+  
+  .header_text {
+    padding: 1rem 1.5rem;
+    top: 20%;
+  }
+  
+  .header_text > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .header_text > p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .header_search_button {
+    width: 90%;
+    height: 55px;
+    top: 75%;
+  }
+  
+  .header_search_button > .header_search {
+    font-size: 0.9rem;
+    padding: 0 1.25rem;
+    border-radius: 28px;
+  }
+  
+  .header_search_button > .header_search > input {
+    font-size: 0.9rem;
+    padding: 0 0.75rem;
+  }
+  
+  .header_search_button > .header_search > button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header_search_button > .header_search > button > img {
+    width: 16px;
+    height: 16px;
+  }
+}

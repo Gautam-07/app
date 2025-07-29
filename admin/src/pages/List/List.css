@@ -1,0 +1,320 @@
+.list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.list_header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.list_header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.list_header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.list > p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff8a00;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.list_table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.list_table_format {
+  display: grid;
+  grid-template-columns: 80px 2fr 1fr 1fr 80px;
+  align-items: center;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #374151;
+  gap: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.list_table_format:first-child {
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  color: white;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.3);
+}
+
+.list_table_format:not(:first-child):hover {
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.1);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.list_table_format b {
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.list_table_format img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.list_table_format:not(:first-child):hover img {
+  border-color: #ff8a00;
+  transform: scale(1.05);
+}
+
+.remove_food_function {
+  color: #ef4444;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.remove_food_function:hover {
+  color: white;
+  background: #ef4444;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+/* Empty State */
+.list_empty {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #64748b;
+}
+
+.list_empty_icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.list_empty_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.list_empty_description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Loading State */
+.list_loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #64748b;
+}
+
+.list_loading_spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f1f5f9;
+  border-top: 3px solid #ff8a00;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal styles */
+.modal_overlay, .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 3000;
+  padding: 2.5rem 1rem 1rem 1rem;
+  min-height: 100vh;
+}
+.modal_content, .modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 1.2rem 0.8rem;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+  z-index: 3001;
+  margin-top: 56px;
+}
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.close-btn:hover {
+  background: #f1f5f9;
+  color: #64748b;
+}
+@media (max-width: 600px) {
+  .modal_content, .modal-content {
+    margin: 1rem;
+    padding: 1.5rem;
+    min-width: 0;
+  }
+}
+
+.add_procut_description textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  min-height: 60px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+.add_procut_description textarea:focus {
+  outline: none;
+  border-color: #ff8a00;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .list_table_format {
+    grid-template-columns: 60px 2fr 1fr 1fr 60px;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .list_table_format img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .remove_food_function {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .list_header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .list_table_format {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    text-align: center;
+  }
+  
+  .list_table_format:first-child {
+    display: none;
+  }
+  
+  .list_table_format {
+    border: 1px solid #e2e8f0;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  
+  .list_table_format img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+  
+  .remove_food_function {
+    margin: 0 auto;
+  }
+}

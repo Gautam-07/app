@@ -1,0 +1,350 @@
+.navbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 0 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+
+.navbar_logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar_logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.navbar_title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar_actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar_user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.navbar_user:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_user img {
+  height: 36px;
+  width: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ff8a00;
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  box-shadow: 0 2px 8px rgba(255, 138, 0, 0.3);
+}
+
+.navbar_user_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar_user_name {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.navbar_user_role {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.navbar_notifications {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar_notifications:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_notifications::after {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 8px;
+  height: 8px;
+  background: #ef4444;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.navbar_notifications svg {
+  width: 20px;
+  height: 20px;
+  color: #64748b;
+}
+
+/* Mobile Menu Toggle */
+.navbar_mobile_toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar_mobile_toggle:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: #ff8a00;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+  
+  .navbar_logo img {
+    height: 32px;
+  }
+  
+  .navbar_title {
+    font-size: 1.2rem;
+  }
+  
+  .navbar_user {
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .navbar_user img {
+    height: 32px;
+    width: 32px;
+  }
+  
+  .navbar_user_name {
+    font-size: 0.8rem;
+  }
+  
+  .navbar_user_role {
+    font-size: 0.7rem;
+  }
+  
+  .navbar_mobile_toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar_user_info {
+    display: none;
+  }
+  
+  .navbar_actions {
+    gap: 1rem;
+  }
+}
+
+.sidebar {
+  width: 210px;
+  min-height: 100vh;
+  background: #fff;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.07);
+  padding: 2.5rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+}
+
+.sidebar_options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidebar_option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.08rem;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+}
+
+.sidebar_option img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.sidebar_option.active,
+.sidebar_option:active,
+.sidebar_option:hover {
+  background: #ff6600;
+  color: #fff;
+}
+
+.sidebar_option.active img,
+.sidebar_option:active img,
+.sidebar_option:hover img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 60px;
+    padding: 1.2rem 0.2rem;
+  }
+  .sidebar_option p {
+    display: none;
+  }
+  .sidebar_option {
+    justify-content: center;
+    padding: 0.7rem 0.2rem;
+  }
+}
+
+.order-admin-container {
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 2rem 1.5rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.order-admin-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ff6600;
+  letter-spacing: 1px;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #fafbfc;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  padding: 1.2rem 1.5rem;
+  border: 1px solid #eee;
+}
+
+.order-item-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.order-item-details {
+  flex: 1;
+}
+
+.order-item-food {
+  font-size: 1.08rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.order-item-customer,
+.order-item-address {
+  font-size: 0.98rem;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.order-item-status {
+  margin-top: 0.7rem;
+}
+
+.order-item-status select {
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  .order-admin-container {
+    padding: 0.5rem;
+  }
+  .order-item {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.7rem;
+  }
+  .order-item-img {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,0 +1,408 @@
+.profile-picture-upload-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: grid;
+    backdrop-filter: blur(5px);
+}
+
+.profile-picture-upload-modal {
+    place-self: center;
+    width: max(23vw, 500px);
+    color: #808080;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 30px 35px;
+    border-radius: 16px;
+    font-size: 14px;
+    animation: fadeIn 0.5s;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(241, 90, 36, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for modal content */
+.profile-picture-upload-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.profile-picture-upload-modal::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.profile-picture-upload-modal::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.profile-picture-upload-modal::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.profile-picture-upload-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.profile-picture-upload-header h3 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: #94a3b8;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.close-button:hover {
+    background-color: #f7fafc;
+    transform: scale(1.1);
+}
+
+.profile-picture-upload-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.current-profile-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.profile-image-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f15a24;
+    box-shadow: 0 8px 25px rgba(241, 90, 36, 0.2);
+}
+
+.current-profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(241, 90, 36, 0.9);
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0 0 50% 50%;
+}
+
+.current-profile-picture p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.select-file-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f15a24 0%, #f6391c 100%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(241, 90, 36, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 200px;
+}
+
+.select-file-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(241, 90, 36, 0.4);
+}
+
+.select-file-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.select-file-button img {
+    width: 16px;
+    height: 16px;
+}
+
+.file-info {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-align: center;
+    margin: 0;
+}
+
+.preview-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px dashed #e2e8f0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #fef7f0 0%, #fef3e2 100%);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.preview-image-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #f15a24;
+}
+
+.preview-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.preview-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(241, 90, 36, 0.9);
+    color: white;
+    padding: 3px 6px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 0 0 50% 50%;
+}
+
+.preview-section p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.upload-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+}
+
+.upload-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+}
+
+.upload-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.remove-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.3);
+}
+
+.remove-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+.remove-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.cancel-button {
+    padding: 12px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-button:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+.cancel-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-picture-upload-modal {
+        width: max(23vw, 330px);
+        padding: 25px 30px;
+    }
+    
+    .profile-picture-upload-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .current-profile-picture img,
+    .preview-section img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .profile-picture-upload-content {
+        gap: 18px;
+    }
+    
+    .action-buttons {
+        gap: 10px;
+    }
+    
+    .select-file-button,
+    .upload-button,
+    .remove-button,
+    .cancel-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    
+    .file-info {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-picture-upload-modal {
+        width: max(23vw, 300px);
+        padding: 20px 25px;
+    }
+    
+    .profile-picture-upload-content {
+        gap: 15px;
+    }
+    
+    .current-profile-picture,
+    .preview-section {
+        padding: 15px;
+    }
+    
+    .current-profile-picture img,
+    .preview-section img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .profile-picture-upload-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .select-file-button,
+    .upload-button,
+    .remove-button,
+    .cancel-button {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+    
+    .file-info {
+        font-size: 0.7rem;
+    }
+    
+    .profile-image-overlay,
+    .preview-overlay {
+        padding: 2px 4px;
+        font-size: 0.6rem;
+    }
+} 

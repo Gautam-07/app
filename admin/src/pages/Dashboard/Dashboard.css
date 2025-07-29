@@ -1,0 +1,152 @@
+/* Dashboard specific styles */
+.stat_icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.stat_content {
+  flex: 1;
+}
+
+.content_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.content_header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.recent_orders {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.order_item:hover {
+  background: white;
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.order_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order_id {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.order_customer {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.order_amount {
+  font-weight: 600;
+  color: #059669;
+  font-size: 1.1rem;
+}
+
+.order_status {
+  display: flex;
+  align-items: center;
+}
+
+.status_badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status_badge.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status_badge.processing {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status_badge.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status_badge.cancelled {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.quick_actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.quick_actions .btn {
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+}
+
+.quick_actions .btn span {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content_header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .content_header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .order_item {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .quick_actions {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat_icon {
+    font-size: 2rem;
+  }
+  
+  .stat_value {
+    font-size: 1.5rem;
+  }
+} 

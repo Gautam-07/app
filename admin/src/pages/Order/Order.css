@@ -1,0 +1,143 @@
+.order-admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.order-admin-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #ff8a00 0%, #e52e71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 1px;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-empty {
+  text-align: center;
+  color: #64748b;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  padding: 3rem 2rem;
+}
+
+.order-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.order-item:hover {
+  box-shadow: 0 4px 15px rgba(255, 138, 0, 0.1);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.order-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.order-item:hover .order-item-img {
+  border-color: #ff8a00;
+  transform: scale(1.05);
+}
+
+.order-item-details {
+  flex: 1;
+}
+
+.order-item-food {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.order-item-customer,
+.order-item-address {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 0.3rem;
+}
+
+.order-item-status {
+  margin-top: 1rem;
+}
+
+.order-item-status label {
+  font-weight: 600;
+  color: #374151;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.order-item-status select {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.order-item-status select:focus {
+  border-color: #ff8a00;
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 138, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .order-admin-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-admin-container {
+    padding: 1rem;
+  }
+  
+  .order-admin-title {
+    font-size: 1.5rem;
+  }
+  
+  .order-item {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .order-item-img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
