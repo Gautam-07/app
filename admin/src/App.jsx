@@ -14,7 +14,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
-  const url = "http://localhost:4000";
+  const url = "https://homely-backend-cj6n.onrender.com";
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
