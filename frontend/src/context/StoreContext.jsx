@@ -9,7 +9,7 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [searchQuery, setSearchQuery] = useState("");
     const [userProfile, setUserProfile] = useState(null);
-    const url = "http://localhost:4000";
+    const url = "https://homely-backend-cj6n.onrender.com";
     const [token, setToken] = useState("");
     const navigate = useNavigate();
 
