@@ -1,7 +1,5 @@
 # Food Delivery App with Meal Subscription System
 
-A complete food delivery application with a beautiful meal subscription system featuring weekly and monthly plans.
-
 ## Features
 
 ### 🍽️ Meal Subscription System
@@ -17,6 +15,9 @@ A complete food delivery application with a beautiful meal subscription system f
 - Order management
 - User authentication
 - Responsive design
+- **Animated search bar** (see above)
+- **Apple-style clean UI** (see above)
+- **Modern About & Footer**
 
 ## Tech Stack
 
@@ -39,6 +40,7 @@ A complete food delivery application with a beautiful meal subscription system f
 - **Toast notifications**
 - **Image upload functionality**
 - **Real-time data management**
+- **Inline/modal editing**
 
 ## Installation & Setup
 
@@ -124,6 +126,7 @@ Admin panel will run on `http://localhost:5174`
 - `GET /api/food/list` - Get all food items
 - `POST /api/food/add` - Add new food item (admin only)
 - `POST /api/food/remove` - Remove food item (admin only)
+- `POST /api/food/update` - Update food item (admin only)
 
 ### User Management
 - `POST /api/user/login` - User login
@@ -140,20 +143,23 @@ Admin panel will run on `http://localhost:5174`
 The system comes with 6 pre-configured meal plans:
 
 ### Weekly Plans
-1. **Weekly Basic Plan** - ₹1,200 (3 meals/day)
-2. **Weekly Premium Plan** - ₹1,800 (3 meals/day)
-3. **Weekly Light Plan** - ₹900 (2 meals/day)
+1. **Weekly Basic Plan** - ₹1,200 (3 meals/day) You Can Change from Admin Panel.
+2. **Weekly Premium Plan** - ₹1,800 (3 meals/day) You Can Change from Admin Panel.
+3. **Weekly Light Plan** - ₹900 (2 meals/day) You Can Change from Admin Panel.
 
 ### Monthly Plans
-1. **Monthly Basic Plan** - ₹4,200 (3 meals/day)
-2. **Monthly Premium Plan** - ₹6,500 (3 meals/day)
-3. **Monthly Family Plan** - ₹8,000 (3 meals/day)
+1. **Monthly Basic Plan** - ₹4,200 (3 meals/day) You Can Change from Admin Panel.
+2. **Monthly Premium Plan** - ₹6,500 (3 meals/day) You Can Change from Admin Panel.
+3. **Monthly Family Plan** - ₹8,000 (3 meals/day) You Can Change from Admin Panel.
 
 ## Features Overview
 
 ### Frontend Features
 - **Responsive Design**: Works on all devices
 - **Beautiful Animations**: Smooth transitions and hover effects
+- **Animated Navbar Search**: Apple-style search bar appears/disappears on scroll
+- **Clean Cart & Order UI**: Minimal, premium, card-based design
+- **Modern About & Footer**: Beautiful, branded pages
 - **Filter System**: Filter plans by duration (weekly/monthly)
 - **Price Calculation**: Shows price per meal
 - **Interactive UI**: Hover effects and modern design
@@ -164,6 +170,7 @@ The system comes with 6 pre-configured meal plans:
 - **Feature Management**: Add/remove features for each plan
 - **Image Upload**: Drag and drop image functionality
 - **Real-time Updates**: Instant feedback on actions
+- **Inline/Modal Editing**: Edit food items in a modal popup
 
 ### Backend Features
 - **RESTful API**: Clean and organized endpoints
