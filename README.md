@@ -1,5 +1,7 @@
 # Food Delivery App with Meal Subscription System
 
+> 📋 **Industry Analysis:** Check out our comprehensive [Food Delivery Industry Case Study](./FOOD_DELIVERY_CASE_STUDY.md) and [Documentation](./docs/) for strategic insights and market analysis.
+
 ## Features
 
 ### 🍽️ Meal Subscription System
